@@ -1,0 +1,13 @@
+1. Connect to the bastion of the freshly deployed OCP 4.5 cluster as per received instructions Ex: ssh your_id@bastion.f267.example.opentlc.com 
+2. Switch to root account 'sudo su -' 
+3. Install Ansible  ‘dnf install -y ansible’ >> approx time to complete 29 seconds
+4. Clone agnosticd repo from my fork git clone https://github.com/guimou/agnosticd.git && git -C ./agnosticd checkout guimou-user-info-update   >> approx time to complete 9 seconds
+5. Clone agnosticV from my repo git clone https://github.com/guimou/agnosticV.git   >> approx time to complete 1 second
+6. Install yq (to parse/merge configs) wget https://github.com/mikefarah/yq/releases/download/3.4.1/yq_linux_amd64 -O /usr/bin/yq && chmod +x /usr/bin/yq  >>>approx time to complete 1 second
+7. Go to AgnosticV folder 'cd agnosticV' 
+8. Deploy the base services (OCS, Serverless, other operators) ./xraylab_base_compile.sh && ./xraylab_base_deploy.sh   >>>approx time to complete 5 mins 2 seconds 
+9. Wait ~12mins  for everything to deploy correctly. Check that OCS is running (OCS Cluster status to green on OCP Console Overview, Persistent Storage tab)  >>approx time to complete OCS running : this could take up to >12 minutes so you have to WAIT!!!
+10. Deploy the student workload ./xraylab_student_compile.sh && ./xraylab_student_deploy.sh   >>>approx time to complete < 60 seconds
+11. Wait ~3 mn for bookbag (the workshop environment) to run properly (if not you'll simply have to reload page after next step 
+12. Get bookbag information cat ./config/ocp-workloads-0001/user-info.yaml   >>> not really needed see no.13
+13. Connect to the stated URL Ex: https://bookbag-bookbag-0001.apps.cluster-f267.f267.example.opentlc.com >>> your environment will differ, simply go to the project ‘book bag-0001’ and then look at routes in Networking , wait about 5 minutes after pods running and click on link

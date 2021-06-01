@@ -6,7 +6,7 @@ sudo su -
 dnf install -y ansible
 
 4. Clone agnosticd repo from my fork >> approx time to complete 9 seconds
-git clone https://github.com/guimou/agnosticd.git && git -C ./agnosticd checkout guimou-user-info-update
+git clone https://github.com/mamurak/agnosticd.git && git -C ./agnosticd checkout mmurakam-xraylab 
 
 5. Clone agnosticV from my repo >> approx time to complete 1 second
 git clone https://github.com/mamurak/agnosticV.git

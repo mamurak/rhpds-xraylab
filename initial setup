@@ -17,7 +17,9 @@ wget https://github.com/mikefarah/yq/releases/download/3.4.1/yq_linux_amd64 -O /
 7. Go to AgnosticV folder
 cd agnosticV
 
-8. Deploy the base services (OCS, Serverless, other operators) >>>approx time to complete 5 mins 2 seconds 
+8a. Verify that the cluster contains at least 3 worker nodes for OCS.
+
+8b. Deploy the base services (OCS, Serverless, other operators) >>>approx time to complete 5 mins 2 seconds 
 ./xraylab_base_compile.sh && ./xraylab_base_deploy.sh
 
 9. Wait ~12mins  for everything to deploy correctly. Check that OCS is running (OCS Cluster status to green on OCP Console Overview, Persistent Storage tab)  >>approx time to complete OCS running : this could take up to >12 minutes so you have to WAIT!!!
